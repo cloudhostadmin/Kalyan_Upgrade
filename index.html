@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>कल्याण शताब्दी वर्ष 2026</title>
+<link rel="preconnect" href="https://script.google.com">
+<link rel="dns-prefetch" href="https://script.google.com">
+<link rel="preconnect" href="https://api.postalpincode.in">
+<link rel="dns-prefetch" href="https://api.postalpincode.in">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold:        #c8920a;
+  --gold-light:  #f0c040;
+  --gold-dark:   #7a5500;
+  --gold-bg:     #fffbf0;
+  --gold-border: #e8d898;
+  --cream:       #fdf8ee;
+  --text:        #1a1208;
+  --muted:       #7a6430;
+  --red:         #c0392b;
+  --green:       #1a7a3c;
+  --radius:      14px;
+  --shadow:      0 8px 40px rgba(180,130,0,.13);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Tiro Devanagari Hindi', 'DM Sans', sans-serif;
+  background: var(--cream);
+  min-height: 100vh;
+  display: flex; justify-content: center; align-items: flex-start;
+  padding: 24px 16px 60px;
+}
+body::before {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(200,146,10,.06) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(200,146,10,.06) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 4l2 9-9-2 7 7-7 7 9-2-2 9 2-9 9 2-7-7 7-7-9 2z' fill='%23c8920a' fill-opacity='0.035'/%3E%3C/svg%3E");
+}
+.page { position:relative; z-index:1; width:100%; max-width:580px; }
+.card {
+  background:#fff; border-radius:var(--radius);
+  box-shadow:var(--shadow); border:1.5px solid var(--gold-border); overflow:hidden;
+}
+.card-header {
+  background:linear-gradient(135deg,#6b3c00 0%,#c8920a 55%,#e8b830 100%);
+  padding:26px 30px 22px; display:flex; align-items:center; gap:18px; position:relative;
+}
+.card-header::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+}
+.logo {
+  width:76px; height:76px; object-fit:contain;
+  border-radius:10px; background:rgba(255,255,255,.15); padding:4px; flex-shrink:0;
+}
+.header-text h1 {
+  font-family:'Tiro Devanagari Hindi', serif; font-size:26px; color:#fff; font-weight:400;
+  line-height:1.25; text-shadow:0 2px 8px rgba(0,0,0,.25);
+}
+.header-text .sub {
+  font-family:'DM Sans', sans-serif;
+  font-size:12px; color:rgba(255,255,255,.85); margin-top:5px;
+  font-weight:600; letter-spacing:1.1px; text-transform:uppercase;
+}
+.header-text .note {
+  font-family:'DM Sans', sans-serif;
+  font-size:11.5px; color:rgba(255,255,255,.6); margin-top:3px; font-style:italic;
+}
+.card-body { padding:26px 30px 32px; }
+
+/* ── OTP / Search section ── */
+.otp-box {
+  background: var(--gold-bg); border:1.5px solid var(--gold-border);
+  border-radius:12px; padding:20px 18px; margin-bottom:6px;
+}
+.otp-box h3 { font-size:15px; color:var(--gold-dark); margin-bottom:10px; font-family:'DM Sans',sans-serif; font-weight:700; }
+.otp-row { display:flex; gap:10px; margin-bottom:10px; }
+.otp-row input { flex:1; }
+.otp-row button, .stack-btn {
+  padding:11px 18px; background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:#fff; border:none; border-radius:8px; font-weight:700; font-size:13.5px;
+  cursor:pointer; white-space:nowrap; font-family:'DM Sans',sans-serif; transition:.2s;
+}
+.otp-row button:disabled, .stack-btn:disabled { opacity:.55; cursor:not-allowed; }
+.otp-row button:hover:not(:disabled), .stack-btn:hover:not(:disabled) { transform:translateY(-1px); box-shadow:0 5px 16px rgba(200,146,10,.3); }
+.otp-msg {
+  font-size:13px; padding:9px 12px; border-radius:7px; margin-top:6px; font-weight:600;
+  font-family:'DM Sans',sans-serif;
+}
+.otp-msg.success { background:#e8f5ed; color:var(--green); border:1px solid #9bd6b3; }
+.otp-msg.error   { background:#fdf0ee; color:var(--red);   border:1px solid #f0bdb5; }
+.otp-msg.info    { background:#fff8e0; color:var(--gold-dark); border:1px solid var(--gold-border); }
+.resend-note { font-size:12px; color:var(--muted); margin-top:6px; font-family:'DM Sans',sans-serif; }
+.update-phone-box {
+  background:#e8f5ed; border:1.5px solid #9bd6b3; border-radius:9px;
+  padding:13px; margin-top:14px;
+}
+.update-phone-box h4 { font-size:13px; color:var(--green); margin-bottom:8px; font-family:'DM Sans',sans-serif; }
+.id-hint-box { background:#fff; border:1.5px solid var(--gold-border); border-radius:8px; padding:12px; margin:12px 0; }
+.id-hint-box img { width:100%; max-width:480px; display:block; margin:8px auto 0; border-radius:6px; border:1px solid #eee; }
+.id-hint-box p { font-size:12.5px; color:var(--muted); text-align:center; font-family:'DM Sans',sans-serif; }
+
+/* ── Animated OTP digit boxes (per reference video) ── */
+.otp-stage { text-align:center; padding:6px 0 4px; }
+.otp-stage .verify-title { font-family:'DM Sans',sans-serif; font-weight:700; font-size:17px; color:var(--text); margin-bottom:6px; }
+.otp-stage .verify-sub   { font-family:'DM Sans',sans-serif; font-size:13px; color:var(--muted); margin-bottom:18px; line-height:1.6; }
+.otp-digits { display:flex; justify-content:center; gap:11px; margin-bottom:14px; flex-wrap:wrap; }
+.otp-digit {
+  width:46px; height:54px; text-align:center; font-size:22px; font-weight:700;
+  border:2px solid #ddd4b8; border-radius:10px; background:#fff; color:var(--text);
+  font-family:'DM Sans',sans-serif; transition: box-shadow .25s, border-color .25s, transform .15s;
+  caret-color: #e25a4a;
+}
+.otp-digit:focus {
+  outline:none; border-color:#e25a4a;
+  box-shadow: 0 0 0 4px rgba(226,90,74,.18), 0 0 14px rgba(226,90,74,.45);
+  transform: translateY(-1px);
+}
+.otp-digit.filled { border-color: var(--gold); }
+.otp-digit.shake { animation: otpShake .35s; border-color:var(--red); }
+@keyframes otpShake {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+.otp-success-wrap { display:none; flex-direction:column; align-items:center; padding:10px 0 6px; }
+.otp-success-wrap.show { display:flex; }
+.otp-success-badge {
+  width:62px; height:62px; border-radius:16px; background:#1a3326;
+  border:2px solid #48d18a; display:flex; align-items:center; justify-content:center;
+  animation: otpPop .45s cubic-bezier(.34,1.56,.64,1) both, otpGlow 1.6s ease-out .45s 1;
+  margin-bottom:12px;
+}
+.otp-success-badge svg { width:28px; height:28px; }
+.otp-success-text { font-family:'DM Sans',sans-serif; font-weight:700; font-size:15px; color:var(--green); }
+@keyframes otpPop {
+  0%   { transform: scale(.4); opacity:0; }
+  70%  { transform: scale(1.08); opacity:1; }
+  100% { transform: scale(1); opacity:1; }
+}
+@keyframes otpGlow {
+  0%   { box-shadow: 0 0 0 0 rgba(72,209,138,.55); }
+  70%  { box-shadow: 0 0 0 18px rgba(72,209,138,0); }
+  100% { box-shadow: 0 0 0 0 rgba(72,209,138,0); }
+}
+@media(max-width:480px){ .otp-digit { width:38px; height:48px; font-size:19px; } .otp-digits { gap:8px; } }
+
+/* ── Customer ID Banner ── */
+.cid-banner {
+  display: none;
+  background: linear-gradient(90deg, #7a5500 0%, #c8920a 100%);
+  padding: 10px 30px;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+.cid-banner.visible { display: flex; }
+.cid-banner .cid-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10.5px; font-weight: 700;
+  color: rgba(255,255,255,.65); letter-spacing: 1.2px;
+  text-transform: uppercase; white-space: nowrap; flex-shrink: 0;
+}
+.cid-banner .cid-pill {
+  background: rgba(255,255,255,.18);
+  border: 1.5px solid rgba(255,255,255,.35);
+  border-radius: 20px; padding: 4px 14px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px; font-weight: 800; color: #fff;
+  letter-spacing: .8px; cursor: not-allowed; outline: none;
+  -webkit-text-fill-color: #fff; opacity: 1;
+  min-width: 0; width: auto; max-width: 100%;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.info-notice {
+  background: linear-gradient(135deg, #fffbf0, #fff8e0);
+  border: 1.5px solid var(--gold-border);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.95;
+}
+#fetchStatus { font-size:12.5px; color:var(--muted); text-align:right; min-height:16px; margin-bottom:4px; font-family:'DM Sans',sans-serif; }
+#fetchError {
+  display:none; background:#fff8e6; border:1.5px solid #f0c040;
+  color:#7a5a00; padding:11px 15px; border-radius:8px;
+  margin-bottom:18px; font-size:13.5px; font-weight:500;
+}
+#fetchError.active { display:block; }
+.divider {
+  display:flex; align-items:center; gap:12px;
+  margin:24px 0 18px; color:#b89f54; font-size:12.5px; font-weight:500;
+  font-family:'Tiro Devanagari Hindi', 'DM Sans', sans-serif;
+}
+.divider::before,.divider::after {
+  content:''; flex:1; height:1px;
+  background:linear-gradient(90deg, transparent, #e8dfc8, transparent);
+}
+.action-row { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
+.act-btn {
+  padding:18px 12px; border-radius:12px; border:2px solid transparent;
+  cursor:pointer;
+  display:flex; flex-direction:column; align-items:center; gap:7px;
+  transition:all .25s; text-align:center;
+}
+.act-btn .icon { font-size:26px; line-height:1; }
+.act-btn .ttl  {
+  font-family:'DM Sans', sans-serif;
+  font-size:15px; font-weight:700; letter-spacing:.2px;
+}
+.act-btn .dsc  {
+  font-family:'DM Sans', sans-serif;
+  font-size:11.5px; font-weight:400; opacity:.85; line-height:1.5;
+}
+.act-btn .dsc.hi {
+  font-family:'Tiro Devanagari Hindi', sans-serif;
+  font-size:13px; opacity:.9;
+}
+.btn-pay {
+  background:linear-gradient(135deg,#c8920a,#7a5500); color:#fff;
+  box-shadow:0 4px 18px rgba(200,146,10,.28);
+}
+.btn-pay:hover { transform:translateY(-2px); box-shadow:0 8px 26px rgba(200,146,10,.42); }
+.btn-pay:active { transform:translateY(0); }
+.btn-pay:disabled { opacity:.5; cursor:not-allowed; transform:none; }
+.btn-addr {
+  background:#fff; color:var(--gold-dark); border-color:var(--gold-border);
+}
+.btn-addr:hover { border-color:var(--gold); background:var(--gold-bg); transform:translateY(-2px); box-shadow:0 5px 18px rgba(200,146,10,.1); }
+.btn-addr.open  { border-color:var(--gold); background:var(--gold-bg); box-shadow:0 3px 12px rgba(200,146,10,.15); }
+.btn-addr:active { transform:translateY(0); }
+.addr-saved {
+  display:none; margin-top:14px;
+  background:#e8f5ed; border:1.5px solid #48bb78;
+  color:#1a7a3c; padding:10px 15px; border-radius:9px;
+  font-size:13.5px; font-weight:600; align-items:center; gap:8px;
+}
+.addr-saved.show { display:flex; }
+.addr-panel {
+  max-height:0; overflow:hidden;
+  transition:max-height .45s cubic-bezier(.4,0,.2,1), opacity .35s;
+  opacity:0;
+}
+.addr-panel.open { max-height:2400px; opacity:1; }
+.addr-inner {
+  border:1.5px solid var(--gold-border); border-radius:12px;
+  padding:22px 20px; margin-top:16px; background:var(--gold-bg);
+}
+.edit-hint {
+  background:#fff; border-left:3px solid var(--gold);
+  padding:9px 13px; border-radius:0 8px 8px 0;
+  font-size:13px; color:var(--gold-dark); font-weight:500; margin-bottom:18px;
+  line-height:1.6;
+}
+.fg { margin-bottom:16px; }
+.fg label { display:block; margin-bottom:6px; color:#333; font-weight:600; font-size:13.5px; }
+.fg input, .fg textarea {
+  width:100%; padding:11px 13px;
+  border:1.5px solid #ddd4b8; border-radius:8px;
+  font-family:'Tiro Devanagari Hindi', 'DM Sans',sans-serif; font-size:14px;
+  background:#fff; color:var(--text);
+  transition:border-color .2s, box-shadow .2s, background .4s;
+}
+.fg input:disabled {
+  background:#f0ebe0; cursor:not-allowed;
+  -webkit-text-fill-color: #888; color:#888; opacity:1;
+}
+.fg input:not(:disabled):focus, .fg textarea:focus {
+  outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(200,146,10,.1);
+}
+.fr { display:grid; grid-template-columns:1fr 2fr 2fr; gap:11px; margin-bottom:16px; }
+.fr .fg { margin-bottom:0; }
+.cc { text-align:right; font-size:11px; color:#aaa; margin-top:3px; }
+.req { color:var(--red); }
+.pin-status { font-size:12.5px; margin-top:4px; padding:5px 8px; border-radius:6px; }
+.pin-status.loading { color:var(--gold-dark); background:var(--gold-bg); border:1px solid var(--gold-border); }
+.pin-status.success { color:var(--green); background:#e8f5ed; }
+.pin-status.error   { color:var(--red);   background:#fdf0ee; }
+.save-btn {
+  width:100%; padding:13px;
+  background:linear-gradient(135deg,#48bb78,#1a7a3c);
+  color:#fff; border:none; border-radius:10px;
+  font-family:'Tiro Devanagari Hindi', 'DM Sans',sans-serif; font-size:15.5px; font-weight:600;
+  cursor:pointer; transition:all .3s; margin-top:6px;
+}
+.save-btn:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 7px 22px rgba(26,122,60,.32); }
+.save-btn:disabled { opacity:.55; cursor:not-allowed; }
+@keyframes shimmer {
+  0%   { background-position:-600px 0; }
+  100% { background-position: 600px 0; }
+}
+.skeleton .fg input:not(:disabled), .skeleton .fg textarea {
+  pointer-events:none;
+  background:linear-gradient(90deg,#f0e8d0 25%,#fdf6e3 50%,#f0e8d0 75%) !important;
+  background-size:600px 100% !important;
+  animation:shimmer 1.2s infinite linear;
+  border-color:#eddcb0 !important; color:transparent !important;
+}
+.skeleton .fg input:disabled { animation:none; background:#f0ebe0 !important; }
+.hidden { display:none !important; }
+.loading-overlay {
+  position: fixed; inset:0; background: rgba(255, 249, 230, 0.95);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999; backdrop-filter: blur(5px);
+}
+.loading-card {
+  background: #fff; padding: 26px 36px; border-radius: 12px; text-align: center;
+  box-shadow: 0 10px 40px rgba(212, 160, 23, 0.3); border: 2px solid var(--gold-border);
+}
+.spinner {
+  border: 4px solid var(--gold-border); border-top: 4px solid var(--gold);
+  border-radius: 50%; width: 38px; height: 38px;
+  animation: spin 1s linear infinite; margin: 0 auto 14px;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.loading-card p { color:#333; font-weight:600; font-family:'DM Sans',sans-serif; font-size:13.5px; }
+@media(max-width:480px){
+  .card-header { padding:18px; gap:13px; }
+  .cid-banner { padding:9px 18px; }
+  .logo { width:62px; height:62px; }
+  .header-text h1 { font-size:22px; }
+  .card-body { padding:18px 18px 28px; }
+  .action-row { grid-template-columns:1fr; }
+  .fr { grid-template-columns:1fr; gap:0; }
+  .fr .fg { margin-bottom:16px; }
+  .otp-row { flex-direction:column; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="card">
+
+  <!-- ── Header ── -->
+  <div class="card-header">
+    <img src="https://raw.githubusercontent.com/cloudhostadmin/KALYAN_CENTURY_2026/main/kal2026.jpeg"
+         alt="कल्याण लोगो" class="logo" id="rightLogo" loading="eager">
+    <div class="header-text">
+      <h1>कल्याण शताब्दी वर्ष</h1>
+      <div class="sub">Kalyan 2026</div>
+      <div class="note">Only for Existing Subscriptions Upgrade</div>
+    </div>
+  </div>
+
+  <!-- ── Loading overlay ── -->
+  <div class="loading-overlay hidden" id="loadingOverlay">
+    <div class="loading-card">
+      <div class="spinner"></div>
+      <p id="loadingMessage">Processing…</p>
+    </div>
+  </div>
+
+  <!-- ── Customer ID Banner (shown only after verification) ── -->
+  <div class="cid-banner" id="cidBanner">
+    <span class="cid-label">Customer ID</span>
+    <input type="text" class="cid-pill" id="customerIdDisplay" disabled autocomplete="off" readonly>
+  </div>
+
+  <div class="card-body">
+    <input type="hidden" id="customerId">
+    <input type="hidden" id="rowIndex">
+    <input type="hidden" id="paymentLink" value="https://p.ppsl.io/PYTMPS/f4FEqk">
+
+    <!-- ════════ STEP 1: OTP VERIFICATION ════════ -->
+    <div class="otp-box" id="otpSection">
+      <div id="otpMobileStage">
+        <h3>🔐 अपना मोबाइल नंबर वेरीफाई करें / Verify Mobile Number</h3>
+        <div class="otp-row">
+          <input type="tel" id="mobileNumberInput" maxlength="10" pattern="[0-9]{10}" placeholder="10-अंकीय मोबाइल नंबर" inputmode="numeric">
+          <button type="button" id="sendOtpBtn" onclick="OTP.sendOTP()">Send OTP</button>
+        </div>
+      </div>
+
+      <div class="otp-stage hidden" id="otpEnterRow">
+        <div class="verify-title">verify your number</div>
+        <div class="verify-sub">हमने आपके मोबाइल पर 6-अंक का OTP भेजा है। नीचे दर्ज करें।</div>
+        <div class="otp-digits" id="otpDigitsWrap"></div>
+      </div>
+
+      <div class="otp-success-wrap" id="otpSuccessWrap">
+        <div class="otp-success-badge">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5L9 17.5L20 6.5" stroke="#48d18a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="otp-success-text">✅ Verified Successfully</div>
+      </div>
+
+      <div class="otp-msg hidden" id="otpMessage"></div>
+      <div class="resend-note hidden" id="resendNote"></div>
+    </div>
+
+    <!-- ════════ STEP 1b: Shown ONLY when verified mobile not found in records ════════ -->
+    <div class="otp-box hidden" id="idSearchSection" style="margin-top:14px;">
+      <h3>🔍 ग्राहक नंबर और पिनकोड दर्ज करें / Enter Customer ID & Pincode</h3>
+      <p style="font-size:13px;color:var(--muted);font-family:'DM Sans',sans-serif;margin-bottom:10px;line-height:1.6;">
+        आपका मोबाइल नंबर हमारे रिकॉर्ड में नहीं मिला। कृपया अपना <strong>ग्राहक नंबर</strong> और <strong>पिनकोड</strong> दर्ज करें ताकि आपका रिकॉर्ड लाया जा सके।
+      </p>
+      <div class="id-hint-box">
+        <p>📍 कृपया गीता प्रेस से प्राप्त पत्रिका के लिफाफे पर अपना ग्राहक नंबर देखें</p>
+        <img src="https://raw.githubusercontent.com/cloudhostadmin/Kalyan_Address_Number_update_form/main/Screenshot%202026-02-10%20140353.png" alt="Customer ID Location Demo">
+      </div>
+      <div class="otp-row">
+        <input type="text" id="customerIdSearchInput" placeholder="Customer ID (e.g., 123456 or 1Y/123456)" autocomplete="off">
+      </div>
+      <div class="otp-row">
+        <input type="text" id="pincodeSearchInput" placeholder="6-digit Pincode" maxlength="6" pattern="[0-9]{6}" inputmode="numeric" autocomplete="off">
+        <button type="button" id="findRecordBtn" onclick="OTP.searchByIdAndPincode()">Find My Record</button>
+      </div>
+      <div class="otp-msg hidden" id="idSearchMessage"></div>
+    </div>
+
+    <!-- ════════ STEP 2: MAIN RENEWAL CONTENT (hidden until verified) ════════ -->
+    <div id="mainContent" class="hidden">
+
+      <div id="fetchError"></div>
+      <div id="fetchStatus"></div>
+
+      <div class="info-notice">
+        कल्याण अंक आपके वर्तमान सदस्यता के अनुसार हर माह सामान्य डाक से प्रेषित किया जाता है।
+        कुछ सदस्यों को सामान्य डाक से भेजी पत्रिका समय पर प्राप्त नहीं हो रही है। इसी को ध्यान में रखते हुए,
+        सामान्य डाक वाले सदस्य अतिरिक्त <strong>&#8377;200</strong> जमा करके अपनी कल्याण सदस्यता को
+        <strong>रजिस्टर्ड ट्रैकिंग सुविधा डाक</strong> के माध्यम से प्राप्त करने की सुविधा ले सकते हैं।
+        कृपया नीचे दिए गए लिंक द्वारा आप &#8377;200 भुगतान कर हर माह बिना विलंब के कल्याण प्राप्त कर सकते हैं।
+      </div>
+
+      <div class="divider">अपना विकल्प चुनें — Choose your action</div>
+
+      <div class="action-row">
+        <button class="act-btn btn-pay" id="payNowBtn" onclick="handlePayNow()">
+          <span class="icon">💳</span>
+          <span class="ttl">Pay Rs 200 Now</span>
+          <span class="dsc">Upgrade Kalyan Delivery<br>via Registered Post</span>
+        </button>
+        <button class="act-btn btn-addr" id="addrToggleBtn" onclick="toggleAddressForm()">
+          <span class="icon">📮</span>
+          <span class="ttl">Update Address</span>
+          <span class="dsc hi">पता बदलें</span>
+        </button>
+      </div>
+
+      <div class="addr-saved" id="addrSaved">
+        ✅ नया पता सफलतापूर्वक सहेजा गया। आगे बढ़ने के लिए कृपया "Pay Rs 200 Now" पर क्लिक करें।
+      </div>
+
+      <div class="addr-panel" id="addrPanel">
+        <div class="addr-inner">
+          <div class="edit-hint">✏️ Please edit fields if any data is incorrect, then click Save Changes</div>
+          <form id="addrForm" onsubmit="saveAddress(event)">
+            <div class="fg">
+              <label>First Name <span class="req">*</span></label>
+              <input type="text" id="firstName" required>
+            </div>
+            <div class="fg">
+              <label>Last Name <span class="req">*</span></label>
+              <input type="text" id="lastName" required>
+            </div>
+            <div class="fg">
+              <label>Address 1 <span class="req">*</span></label>
+              <input type="text" id="address1" required maxlength="40">
+              <div class="cc"><span id="a1c">0</span>/40</div>
+            </div>
+            <div class="fg">
+              <label>Address 2 <span class="req">*</span></label>
+              <input type="text" id="address2" required maxlength="40">
+              <div class="cc"><span id="a2c">0</span>/40</div>
+            </div>
+            <div class="fg">
+              <label>Address 3</label>
+              <input type="text" id="address3" maxlength="40">
+              <div class="cc"><span id="a3c">0</span>/40</div>
+            </div>
+            <div class="fr">
+              <div class="fg">
+                <label>Pincode <span class="req">*</span></label>
+                <input type="text" id="pincode" required pattern="[0-9]{6}" maxlength="6" placeholder="6-digit">
+                <div id="pincodeStatus" class="pin-status" style="display:none;"></div>
+              </div>
+              <div class="fg">
+                <label>City <span class="req">*</span></label>
+                <input type="text" id="city" required placeholder="Auto-filled">
+              </div>
+              <div class="fg">
+                <label>State <span class="req">*</span></label>
+                <input type="text" id="state" required placeholder="Auto-filled">
+              </div>
+            </div>
+            <div class="fg">
+              <label>Mobile Number</label>
+              <input type="tel" id="mobileNumber" disabled pattern="[0-9]{10}" maxlength="10">
+            </div>
+            <div class="fg">
+              <label>Email ID</label>
+              <input type="email" id="emailId" placeholder="For easier communications">
+            </div>
+            <div class="fg">
+              <label>Alternate Mobile / WhatsApp</label>
+              <input type="tel" id="alternateMobile" pattern="[0-9]{10}" maxlength="10">
+            </div>
+            <button type="submit" class="save-btn" id="saveBtn">
+              💾 Save Changes
+            </button>
+          </form>
+        </div>
+      </div><!-- /addr-panel -->
+
+    </div><!-- /mainContent -->
+  </div><!-- /card-body -->
+</div><!-- /card -->
+</div><!-- /page -->
+
+<script>
+// ═══════════════════════════════════════════════════════════
+//  CONFIG — THREE scripts, each doing one job:
+//  1) OTP_SCRIPT_URL    — sendOTP / verifyOTP only. No customer data.
+//  2) APPS_SCRIPT_URL   — your customer-data script. Must support these
+//                         actions (use the included `customer_data.gs`
+//                         file — paste into your existing project and
+//                         redeploy, or deploy fresh):
+//                           action=fetchByMobile&mobile=XXXXXXXXXX
+//                           action=fetchByCustomerIdAndPincode&customerId=...&pincode=...
+//                           action=getCustomer&customerId=...  (legacy, still works)
+//                         Smart Customer ID matching is server-side:
+//                           "1Y/123456" ↔ "123456" both match the same row.
+//  3) SUBMIT_SCRIPT_URL — write-only RegPost2026 logger.
+// ═══════════════════════════════════════════════════════════
+const OTP_SCRIPT_URL    = 'https://script.google.com/macros/s/AKfycbw5sfyhwrYE63C36QZH9NZfNg3BdRyW9bzM3guY4LU5dzYxcloIfkCgy80Brb_zAE_C/exec';
+const APPS_SCRIPT_URL   = 'https://script.google.com/macros/s/AKfycbwhEspDpK8WodNxUd2n15vzv2yzWc1KTJjB9gKTDoI-5wejYMvQs-15arDLCwYPHmL-zg/exec';
+const SUBMIT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby0yiVqCET2PBeCAMBuig6sJ13hxaCMxhwBCTPhiCmghTJz2lwn83Zt9FUiLJd6L5zc/exec';
+
+const OTP_COOLDOWN_TIME = 60;     // seconds
+const REQUEST_TIMEOUT   = 30000;  // ms
+
+// ── State ────────────────────────────────────────────────
+let addrOpen        = false;
+let originalData    = {};
+let updatedAddress  = null;
+let verifiedMobile  = null;
+let cooldownTimer   = null;
+
+// ── URL Param Helper (logo/payment link customisation only) ──
+function getParam(n) {
+  const v = new URLSearchParams(window.location.search).get(n);
+  if (v) return v;
+  if (window.location.hash) {
+    const h = new URLSearchParams(window.location.hash.slice(1)).get(n);
+    if (h) return h;
+  }
+  return '';
+}
+
+function setField(id, val) {
+  if (val == null || val === '') return;
+  const el = document.getElementById(id);
+  if (el) el.value = String(val).trim();
+}
+
+function showLoading(msg) {
+  document.getElementById('loadingMessage').textContent = msg || 'Processing…';
+  document.getElementById('loadingOverlay').classList.remove('hidden');
+}
+function hideLoading() {
+  document.getElementById('loadingOverlay').classList.add('hidden');
+}
+
+function showMsg(elId, text, type) {
+  const el = document.getElementById(elId);
+  el.textContent = text;
+  el.className = 'otp-msg ' + type;
+  el.classList.remove('hidden');
+}
+
+// ── Generic GET helper with timeout, targeting a given base URL ──
+async function apiGetFrom(baseUrl, action, params) {
+  params = params || {};
+  const qs = new URLSearchParams(Object.assign({ action: action }, params)).toString();
+  const controller = new AbortController();
+  const t = setTimeout(function () { controller.abort(); }, REQUEST_TIMEOUT);
+  try {
+    const res = await fetch(baseUrl + '?' + qs, { signal: controller.signal });
+    clearTimeout(t);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return { success: true, data: await res.json() };
+  } catch (e) {
+    clearTimeout(t);
+    return { success: false, error: e.name === 'AbortError' ? 'Request timeout. कृपया पुनः प्रयास करें।' : (e.message || 'Network error') };
+  }
+}
+// OTP actions → the dedicated OTP-only script
+function apiGet(action, params) { return apiGetFrom(OTP_SCRIPT_URL, action, params); }
+// Customer data → the OLD existing script (now extended with by-mobile + by-id-and-pincode)
+function fetchOldByMobile(mobile) {
+  return apiGetFrom(APPS_SCRIPT_URL, 'fetchByMobile', { mobile: mobile });
+}
+function fetchOldByIdAndPincode(customerId, pincode) {
+  return apiGetFrom(APPS_SCRIPT_URL, 'fetchByCustomerIdAndPincode', { customerId: customerId, pincode: pincode });
+}
+
+// ── POST helper (fire to the write-only RegPost2026 script) ──
+async function logEvent(payload) {
+  try {
+    await fetch(SUBMIT_SCRIPT_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+  } catch (e) { /* fire-and-forget */ }
+}
+
+// ══════════════════════════════════════════════════════════
+//  OTP MANAGER  — verification only; data always comes from
+//  the OLD getCustomer script after a successful verify
+// ══════════════════════════════════════════════════════════
+const OTP = (function () {
+
+  // ── Build N animated digit boxes inside a wrapper; calls onComplete(code) when all filled ──
+  function buildDigitBoxes(wrapId, count, onComplete) {
+    const wrap = document.getElementById(wrapId);
+    wrap.innerHTML = '';
+    const boxes = [];
+    for (let i = 0; i < count; i++) {
+      const inp = document.createElement('input');
+      inp.type = 'tel'; inp.inputMode = 'numeric'; inp.maxLength = 1;
+      inp.className = 'otp-digit'; inp.autocomplete = 'one-time-code';
+      wrap.appendChild(inp);
+      boxes.push(inp);
+    }
+    function collect() { return boxes.map(function (b) { return b.value; }).join(''); }
+    function checkComplete() {
+      const code = collect();
+      if (code.length === count && /^\d+$/.test(code)) onComplete(code);
+    }
+    boxes.forEach(function (box, i) {
+      box.addEventListener('input', function () {
+        box.value = box.value.replace(/\D/g, '').slice(0, 1);
+        if (box.value) {
+          box.classList.add('filled');
+          if (i < count - 1) boxes[i + 1].focus();
+        } else {
+          box.classList.remove('filled');
+        }
+        checkComplete();
+      });
+      box.addEventListener('keydown', function (e) {
+        if (e.key === 'Backspace' && !box.value && i > 0) {
+          boxes[i - 1].focus();
+        }
+      });
+      box.addEventListener('paste', function (e) {
+        e.preventDefault();
+        const text = (e.clipboardData || window.clipboardData).getData('text').replace(/\D/g, '').slice(0, count);
+        text.split('').forEach(function (ch, idx) { if (boxes[idx]) { boxes[idx].value = ch; boxes[idx].classList.add('filled'); } });
+        if (text.length) boxes[Math.min(text.length, count) - 1].focus();
+        checkComplete();
+      });
+    });
+    setTimeout(function () { boxes[0].focus(); }, 200);
+    return { boxes: boxes, shake: function () {
+      boxes.forEach(function (b) {
+        b.classList.add('shake');
+        b.value = ''; b.classList.remove('filled');
+      });
+      setTimeout(function () { boxes.forEach(function (b) { b.classList.remove('shake'); }); boxes[0].focus(); }, 380);
+    } };
+  }
+
+  function startCooldown() {
+    let t = OTP_COOLDOWN_TIME;
+    const btn = document.getElementById('sendOtpBtn');
+    btn.disabled = true;
+    const note = document.getElementById('resendNote');
+    note.classList.remove('hidden');
+    function tick() {
+      if (t > 0) {
+        note.textContent = 'Resend OTP in ' + t + 's';
+        t--;
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Resend OTP';
+        note.classList.add('hidden');
+        clearInterval(cooldownTimer);
+      }
+    }
+    tick();
+    cooldownTimer = setInterval(tick, 1000);
+  }
+
+  async function sendOTP() {
+    const mobile = document.getElementById('mobileNumberInput').value.trim();
+    if (!/^\d{10}$/.test(mobile)) {
+      showMsg('otpMessage', 'कृपया सही 10-अंकीय मोबाइल नंबर दर्ज करें', 'error');
+      return;
+    }
+    showLoading('Sending OTP…');
+    const r = await apiGet('sendOTP', { mobile: mobile });
+    hideLoading();
+    if (r.success && r.data && r.data.success) {
+      document.getElementById('mobileNumberInput').disabled = true;
+      document.getElementById('otpMobileStage').classList.add('hidden');
+      document.getElementById('otpEnterRow').classList.remove('hidden');
+      showMsg('otpMessage', '✅ OTP भेज दिया गया है। कृपया SMS देखें।', 'success');
+      startCooldown();
+      buildDigitBoxes('otpDigitsWrap', 6, function (code) { autoVerify(mobile, code); });
+    } else {
+      const m = (r.data && r.data.message) || r.error || 'OTP भेजने में समस्या हुई। पुनः प्रयास करें।';
+      showMsg('otpMessage', m, 'error');
+    }
+  }
+
+  async function autoVerify(mobile, otp) {
+    showLoading('Verifying OTP…');
+    const r = await apiGet('verifyOTP', { mobile: mobile, otp: otp });
+    hideLoading();
+    if (r.success && r.data && r.data.success) {
+      if (cooldownTimer) clearInterval(cooldownTimer);
+      verifiedMobile = mobile;
+      document.getElementById('otpEnterRow').classList.add('hidden');
+      document.getElementById('otpSuccessWrap').classList.add('show');
+      // After the success animation plays briefly, auto-fetch by the
+      // verified mobile. Only if that returns nothing do we show the
+      // Customer ID + Pincode fallback.
+      setTimeout(function () {
+        autoFetchByVerifiedMobile();
+      }, 1100);
+    } else {
+      showMsg('otpMessage', '❌ अमान्य OTP। पुनः प्रयास करें।', 'error');
+      const wrap = document.getElementById('otpDigitsWrap');
+      wrap.__shakeRef && wrap.__shakeRef();
+    }
+  }
+
+  // ── Primary path: search the customer-data sheet by the verified mobile ──
+  async function autoFetchByVerifiedMobile() {
+    showLoading('Fetching your details…');
+    const r = await fetchOldByMobile(verifiedMobile);
+    hideLoading();
+
+    // Network/script error → still let them fall back to ID+Pincode
+    if (!r.success) {
+      revealIdSearchFallback(r.error || 'Connection error. कृपया पुनः प्रयास करें।');
+      return;
+    }
+
+    // Found → straight into the renewal form, no further input needed
+    if (r.data && r.data.success && r.data.data) {
+      document.getElementById('otpSection').classList.add('hidden');
+      revealMainContent(r.data.data);
+      return;
+    }
+
+    // Not found by mobile → show ID + Pincode fallback
+    const reason = (r.data && r.data.message)
+      || 'आपका मोबाइल नंबर हमारे रिकॉर्ड में नहीं मिला।';
+    revealIdSearchFallback(reason);
+  }
+
+  function revealIdSearchFallback(infoMsg) {
+    document.getElementById('otpSection').classList.add('hidden');
+    const sec = document.getElementById('idSearchSection');
+    sec.classList.remove('hidden');
+    if (infoMsg) showMsg('idSearchMessage', infoMsg, 'info');
+    sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function () { document.getElementById('customerIdSearchInput').focus(); }, 220);
+  }
+
+  // ── Fallback path: Customer ID + Pincode (smart ID matching server-side)
+  //    e.g. DB has "1Y/123456" — typing "123456" finds it instantly ──
+  async function searchByIdAndPincode() {
+    const customerId = document.getElementById('customerIdSearchInput').value.trim();
+    const pincode    = document.getElementById('pincodeSearchInput').value.trim();
+
+    if (!customerId) {
+      showMsg('idSearchMessage', 'कृपया Customer ID दर्ज करें', 'error');
+      return;
+    }
+    if (!/^\d{6}$/.test(pincode)) {
+      showMsg('idSearchMessage', 'कृपया सही 6-अंकीय पिनकोड दर्ज करें', 'error');
+      return;
+    }
+
+    showLoading('Searching for your record…');
+    const r = await fetchOldByIdAndPincode(customerId, pincode);
+    hideLoading();
+
+    if (!r.success) {
+      showMsg('idSearchMessage', r.error || 'Connection error. पुनः प्रयास करें।', 'error');
+      return;
+    }
+    if (!(r.data && r.data.success && r.data.data)) {
+      const m = (r.data && r.data.message)
+        || 'रिकॉर्ड नहीं मिला। कृपया Customer ID और पिनकोड पुनः जांचें।';
+      showMsg('idSearchMessage', m, 'error');
+      return;
+    }
+
+    document.getElementById('idSearchSection').classList.add('hidden');
+    revealMainContent(r.data.data);
+  }
+
+  return {
+    sendOTP: sendOTP,
+    searchByIdAndPincode: searchByIdAndPincode
+  };
+})();
+
+// ── Reveal main renewal content with the verified customer's data only ──
+function revealMainContent(data) {
+  const id = (data.customerId || '').toString();
+  document.getElementById('customerId').value = id;
+  document.getElementById('customerIdDisplay').value = id;
+  document.getElementById('cidBanner').classList.add('visible');
+
+  document.getElementById('mainContent').classList.remove('hidden');
+  setShimmer(true);
+  populateFromData(data).finally(function () { setShimmer(false); });
+}
+
+// ── Shimmer Loading State ──────────────────────────────────
+function setShimmer(on) {
+  document.getElementById('mainContent').classList.toggle('skeleton', on);
+  document.getElementById('fetchStatus').textContent = on ? '⏳Loading Details...' : '';
+}
+
+// ── Toggle Address Panel ───────────────────────────────────
+function toggleAddressForm() {
+  addrOpen = !addrOpen;
+  document.getElementById('addrPanel').classList.toggle('open', addrOpen);
+  document.getElementById('addrToggleBtn').classList.toggle('open', addrOpen);
+  const dsc = document.getElementById('addrToggleBtn').querySelector('.dsc');
+  dsc.innerHTML = addrOpen ? 'फॉर्म बंद करें' : 'पता बदलें';
+  if (addrOpen) {
+    setTimeout(function () {
+      document.getElementById('addrPanel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 80);
+  }
+}
+
+// ══════════════════════════════════════════════════════════
+//  ROBUST PINCODE AUTOFILL  (3-tier: direct → proxy → nominatim)
+// ══════════════════════════════════════════════════════════
+(function initPincodeAutofill() {
+  const pincodeInput = document.getElementById('pincode');
+  const cityInput = document.getElementById('city');
+  const stateInput = document.getElementById('state');
+  const statusEl = document.getElementById('pincodeStatus');
+  let lastFetchedPin = '';
+  let activeController = null;
+
+  function setStatus(message, type) {
+    statusEl.textContent = message;
+    statusEl.className = 'pin-status' + (type ? ' ' + type : '');
+    statusEl.style.display = message ? 'block' : 'none';
+  }
+  function clearDependentFields() {
+    cityInput.value = '';
+    stateInput.value = '';
+    lastFetchedPin = '';
+  }
+  function anySignal(signals) {
+    if (typeof AbortSignal.any === 'function') return AbortSignal.any(signals);
+    const ctrl = new AbortController();
+    for (const s of signals) {
+      if (s.aborted) { ctrl.abort(); break; }
+      s.addEventListener('abort', function () { ctrl.abort(); }, { once: true });
+    }
+    return ctrl.signal;
+  }
+  async function timedFetch(url, parentSignal, ms) {
+    ms = ms || 8000;
+    const timer = new AbortController();
+    const id = setTimeout(function () { timer.abort(); }, ms);
+    try {
+      const res = await fetch(url, {
+        method: 'GET', headers: { Accept: 'application/json' },
+        cache: 'no-cache', signal: anySignal([parentSignal, timer.signal])
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return await res.json();
+    } finally { clearTimeout(id); }
+  }
+  function parsePostalPincode(data) {
+    if (!Array.isArray(data) || !data[0]) throw new Error('Bad response');
+    const r = data[0];
+    if (r.Status !== 'Success' || !Array.isArray(r.PostOffice) || !r.PostOffice.length)
+      throw new Error('Invalid PIN');
+    const po = r.PostOffice[0];
+    const city  = (po.District || po.Division || po.Block || '').trim();
+    const state = (po.State || '').trim();
+    if (!city || !state) throw new Error('Incomplete data');
+    return { city: city, state: state };
+  }
+  async function tryDirect(pin, signal) {
+    return parsePostalPincode(await timedFetch('https://api.postalpincode.in/pincode/' + pin, signal));
+  }
+  async function tryProxy(pin, signal) {
+    return parsePostalPincode(await timedFetch(
+      'https://corsproxy.io/?' + encodeURIComponent('https://api.postalpincode.in/pincode/' + pin), signal));
+  }
+  async function tryNominatim(pin, signal) {
+    const data = await timedFetch(
+      'https://nominatim.openstreetmap.org/search?postalcode=' + pin + '&country=India&format=json&addressdetails=1&limit=1', signal);
+    if (!Array.isArray(data) || !data.length) throw new Error('No results');
+    const addr  = (data[0] && data[0].address) || {};
+    const city  = (addr.city || addr.county || addr.state_district || addr.town || addr.village || '').trim();
+    const state = (addr.state || '').trim();
+    if (!city || !state) throw new Error('Incomplete data');
+    return { city: city, state: state };
+  }
+  const TIERS = [tryDirect, tryProxy, tryNominatim];
+  async function fetchPinData(pin) {
+    if (activeController) activeController.abort();
+    activeController = new AbortController();
+    const signal = activeController.signal;
+    setStatus('🔍 Looking up pincode…', 'loading');
+    try {
+      for (const fn of TIERS) {
+        if (signal.aborted) return;
+        try {
+          const res = await fn(pin, signal);
+          cityInput.value  = res.city;
+          stateInput.value = res.state;
+          lastFetchedPin   = pin;
+          setStatus('✅ ' + res.city + ', ' + res.state, 'success');
+          setTimeout(function () { statusEl.style.display = 'none'; }, 3000);
+          return;
+        } catch (err) {
+          if (err.name === 'AbortError') return;
+        }
+      }
+      clearDependentFields();
+      setStatus('⚠️ Could not auto-fill. Please enter manually.', 'error');
+    } finally { activeController = null; }
+  }
+  function handleInput(e) {
+    const raw = e.target.value.replace(/\D/g, '').slice(0, 6);
+    if (e.target.value !== raw) e.target.value = raw;
+    if (raw.length < 6) {
+      if (activeController) activeController.abort();
+      clearDependentFields();
+      setStatus('');
+      return;
+    }
+    if (raw === lastFetchedPin) return;
+    fetchPinData(raw);
+  }
+  pincodeInput.addEventListener('input', handleInput);
+  pincodeInput.addEventListener('paste', function() {
+    setTimeout(function() { handleInput({ target: pincodeInput }); }, 0);
+  });
+})();
+
+// ── Character Counters ─────────────────────────────────────
+['address1', 'address2', 'address3'].forEach(function(id, i) {
+  var el = document.getElementById(id);
+  var sp = document.getElementById(['a1c', 'a2c', 'a3c'][i]);
+  el.addEventListener('input', function() { sp.textContent = el.value.length; });
+});
+
+// ── Populate Form from Sheet Data ───────────────────────────
+async function populateFromData(data) {
+  originalData = data;
+  setField('firstName',       data.firstName);
+  setField('lastName',        data.lastName);
+  setField('address1',        data.address1);
+  setField('address2',        data.address2);
+  setField('address3',        data.address3);
+  setField('mobileNumber',    data.mobileNumber || data.mobile || verifiedMobile);
+  setField('emailId',         data.email || data.emailId);
+  setField('alternateMobile', data.alternateMobile);
+  if (data.paymentLink || data.PaymentLink)
+    setField('paymentLink', data.paymentLink || data.PaymentLink);
+  var pincode = data.pincode ? String(data.pincode).trim() : '';
+  if (pincode) {
+    setField('pincode', pincode);
+    if (data.city && data.state) {
+      setField('city', data.city);
+      setField('state', data.state);
+    }
+  } else {
+    setField('city', data.city);
+    setField('state', data.state);
+  }
+  ['address1', 'address2', 'address3'].forEach(function (id, i) {
+    var sp = document.getElementById(['a1c', 'a2c', 'a3c'][i]);
+    sp.textContent = (document.getElementById(id).value || '').length;
+  });
+}
+
+// ── Save Address ─────────────────────────────────────────────
+async function saveAddress(e) {
+  e.preventDefault();
+  var btn = document.getElementById('saveBtn');
+  btn.disabled = true;
+  btn.textContent = 'Saving…';
+  updatedAddress = {
+    firstName:       document.getElementById('firstName').value,
+    lastName:        document.getElementById('lastName').value,
+    address1:        document.getElementById('address1').value,
+    address2:        document.getElementById('address2').value,
+    address3:        document.getElementById('address3').value,
+    pincode:         document.getElementById('pincode').value,
+    city:            document.getElementById('city').value,
+    state:           document.getElementById('state').value,
+    mobileNumber:    document.getElementById('mobileNumber').value,
+    emailId:         document.getElementById('emailId').value,
+    alternateMobile: document.getElementById('alternateMobile').value
+  };
+  var custId = document.getElementById('customerId').value;
+
+  // Log to RegPost2026 (the OLD script is read-only for us — we never
+  // write back into it; this new address is recorded here instead)
+  await logEvent(Object.assign({
+    type:           'address_saved',
+    customerId:     custId,
+    addressChanged: true,
+    paymentLink:    document.getElementById('paymentLink').value,
+    timestamp:      new Date().toISOString()
+  }, updatedAddress));
+
+  addrOpen = false;
+  document.getElementById('addrPanel').classList.remove('open');
+  document.getElementById('addrToggleBtn').classList.remove('open');
+  document.getElementById('addrToggleBtn').querySelector('.dsc').innerHTML = 'पता बदलें';
+  document.getElementById('addrToggleBtn').querySelector('.ttl').textContent = '✅ Address Saved';
+  document.getElementById('addrSaved').classList.add('show');
+  btn.disabled = false;
+  btn.textContent = '💾 Save Changes';
+  setTimeout(function() {
+    document.getElementById('payNowBtn').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 200);
+}
+
+// ── Pay Now ───────────────────────────────────────────────────
+async function handlePayNow() {
+  var custId    = document.getElementById('customerId').value;
+  var payLink   = document.getElementById('paymentLink').value;
+  var payNowBtn = document.getElementById('payNowBtn');
+  payNowBtn.disabled = true;
+  payNowBtn.querySelector('.ttl').textContent = 'Processing…';
+  var addr = updatedAddress || {
+    firstName:       originalData.firstName       || '',
+    lastName:        originalData.lastName        || '',
+    address1:        originalData.address1        || '',
+    address2:        originalData.address2        || '',
+    address3:        originalData.address3        || '',
+    pincode:         originalData.pincode         || '',
+    city:            originalData.city            || '',
+    state:           originalData.state           || '',
+    mobileNumber:    originalData.mobileNumber || originalData.mobile || verifiedMobile || '',
+    emailId:         originalData.email || originalData.emailId || '',
+    alternateMobile: originalData.alternateMobile || ''
+  };
+  var payload = Object.assign({
+    type:           updatedAddress ? 'pay_with_new_address' : 'pay_original_address',
+    customerId:     custId,
+    addressChanged: !!updatedAddress,
+    paymentLink:    payLink,
+    timestamp:      new Date().toISOString()
+  }, addr);
+  logEvent(payload);
+  window.location.href = payLink;
+}
+
+// ═══════════════════════════════════════════════════════════
+//  INIT — only logo/paymentLink customisation via URL;
+//  NO customerId is ever read from the URL (privacy: identity
+//  must be established via OTP or ID+Pincode match)
+// ═══════════════════════════════════════════════════════════
+(function initPage() {
+  var paymentLink  = getParam('paymentLink');
+  var rightLogoUrl = getParam('rightLogo');
+  var logoSize     = getParam('logoSize');
+  if (paymentLink)  setField('paymentLink', decodeURIComponent(paymentLink));
+  if (rightLogoUrl) document.getElementById('rightLogo').src = decodeURIComponent(rightLogoUrl);
+  if (logoSize) {
+    var s = parseInt(decodeURIComponent(logoSize));
+    if (s > 0 && s <= 300)
+      document.documentElement.style.setProperty('--logo-size', s + 'px');
+  }
+
+  document.getElementById('mobileNumberInput').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); OTP.sendOTP(); }
+  });
+
+  // Fallback inputs: digits-only for pincode, Enter triggers search
+  var cidIn = document.getElementById('customerIdSearchInput');
+  var pinIn = document.getElementById('pincodeSearchInput');
+  if (pinIn) {
+    pinIn.addEventListener('input', function () {
+      this.value = this.value.replace(/\D/g, '').slice(0, 6);
+    });
+  }
+  function onSearchEnter(e) {
+    if (e.key === 'Enter') { e.preventDefault(); OTP.searchByIdAndPincode(); }
+  }
+  if (cidIn) cidIn.addEventListener('keydown', onSearchEnter);
+  if (pinIn) pinIn.addEventListener('keydown', onSearchEnter);
+})();
+</script>
+</body>
+</html>
